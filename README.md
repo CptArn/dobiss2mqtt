@@ -8,8 +8,9 @@ discovery protocol.
 
 For now this only supports:
 
-* turning relay outputs on/off
-* dimming dimmer outputs to a specific percentage
+* turning relay, dimmer & 0-10v outputs on/off
+* dimming dimmer and 0-10v outputs to a specific percentage
+* reading the state of outputs if relay, dimmer & 0-10v modules
 
 It will set up a socket connection to the CAN Programmer. The intention is to
 not have a permanent connection set up so that the regular dobiss app still
@@ -48,9 +49,11 @@ Set dobiss.interface to SXEVOLUTION
 ### SX Ambiance
 Set dobiss.interface to SXAMBIANCE
 
-Currently this is linked to the same protocol as SXAMBIANCE. This might not be working correctly.
+Currently this is linked to the same protocol as SXEVOLUTION. This might not be working correctly.
 
 SX has a dimmer range going from 0 to 10. So brightness changes in steps of 10%.
+
+0-10v modules are not tested on this. If it works, let me know.
 
 ### Ambiance PRO
 Set dobiss.interface to AMBIANCEPRO
@@ -60,10 +63,14 @@ Set dobiss.interface to EVOLUTIONPRO
 
 Currently this is linked to the same protocol as AMBIANCEPRO. This might not be working correctly.
 
+0-10v modules are not tested on this. If it works, let me know.
+
 ### NXT
 Set dobiss.interface to NXT.
 
-Currently this is linked to the same protocol as AMBIANCEPRO. This might not be working correctly.
+Currently this is linked to the same protocol as AMBIANCEPRO. This might not be working correctly. Perhaps NXT also implements this older protocol. Let me know if this does not work.
+
+It appears NXT works via a [new API](http://support.dobiss.com/books/nl-dobiss-nxt/page/developer-api) via REST and WebSockets. This is not implemented currently. If you have an NXT system, and are not affraid to dig into the code a little bit, reach out on the [home assistant community](https://community.home-assistant.io/t/dobiss2mqtt/192310) and we can help you integrate it.
 
 ## Installation
 
